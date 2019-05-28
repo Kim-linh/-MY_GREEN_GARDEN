@@ -11,8 +11,7 @@ class UserPlantsController < ApplicationController
 
   private
 
-def find_user_plant
-  @user_plant = UserPlant.find(params[:id])
-end
-
+  def find_user_plant
+    @user_plant = UserPlant.find(params[:id])
+  end
 end
