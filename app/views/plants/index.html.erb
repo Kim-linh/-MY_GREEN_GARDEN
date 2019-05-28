@@ -1,0 +1,9 @@
+<h1>Bibliographie des plantes</h1>
+<p>Find me in app/views/plants/index.html.erb</p>
+
+<ul>
+  <% @plants.each do |plant| %>
+    <li><%= plant.variety %></li>
+    <li><%= plant.description %></li>
+  <% end %>
+</ul>
