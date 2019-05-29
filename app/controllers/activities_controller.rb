@@ -1,19 +1,25 @@
 class ActivitiesController < ApplicationController
   skip_before_action :authenticate_user!
   def create
-
     @user_plant = UserPlant.find(params[:user_plant_id])
+
+
+    if @user_plant.activities == nil
+      @health = @user_plant.origin_health
+      # si il n'y aucune activite alors je recupere la sante origine
+    else
+      @health = @user_plant.activities.last.health
+      # sinon je recupere la derniere activite dans mon tableau
+    end
+
     @activity = Activity.new(user_plant: @user_plant, date: DateTime.now)
-    # je dois implémenter une méthode pour remplir health d'une donné
-    # soit en recuperant les donéées de la derniere action
-    # soit en créant une nouvelle
-    @health =
-
-
-
-
-
-
+    if params[:health] == nil
+      @activity.health = @health
+      # si mon user ne coche aucune activite alors je renvoie la dernier health recupere
+    else
+      @activity.health = params[:health]
+      # sinon je renvoi le dernier parametre enregistre (parametre = case cochee)
+    end
 
     if @activity.save
       redirect_to user_plants_path
