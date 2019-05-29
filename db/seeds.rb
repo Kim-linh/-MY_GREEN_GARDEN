@@ -17,9 +17,9 @@ lola = User.create!(first_name: 'Lola', last_name: 'Poulette', email: 'lola@lewa
 
 puts 'add a plant...'
 
-cactus = Plant.create!(variety: "cactus", description: "J’appartiens à la famille de plantes à fleurs et je viens du Texas, comme dans Texas Ranger.")
-yucca = Plant.create!(variety: "yucca", description: "Je suis une plante vivaces arbustive remarquable par mes rosettes de feuilles dures.")
-palmier = Plant.create!(variety: "palmier", description: "Je suis une plante qui vit dans les Caraïbes.")
+cactus = Plant.create!(variety: "Cactus", description: "J’appartiens à la famille de plantes à fleurs et je viens du Texas, comme dans Texas Ranger.", picture: "https://res.cloudinary.com/kimlinh/image/upload/v1559145855/cactus_pazkyu.jpg")
+yucca = Plant.create!(variety: "Yucca", description: "Je suis une plante vivaces arbustive remarquable par mes rosettes de feuilles dures.", picture: "https://res.cloudinary.com/kimlinh/image/upload/v1559145860/yucca_wboju0.jpg")
+palmier = Plant.create!(variety: "Palmier", description: "Je suis une plante qui vit dans les Caraïbes.", picture:"https://res.cloudinary.com/kimlinh/image/upload/v1559145865/palmier_f2xykh.jpg" )
 
 puts 'Plant OK...'
 

@@ -23,6 +23,12 @@ class UserPlantsController < ApplicationController
     end
   end
 
+  def destroy
+    user_plant = UserPlant.find(params[:id])
+    user_plant.destroy
+    redirect_to user_plants_path
+  end
+
   private
 
   def find_user_plant

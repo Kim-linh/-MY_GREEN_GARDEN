@@ -1,13 +1,13 @@
 <div class="container">
   <h1>Bibliographie des plantes</h1>
-
-<div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
-    <div class="card-product-infos">
-      <% @plants.each do |plant| %>
-      <h2><%= plant.variety %></h2>
-      <p><%= plant.description %> <strong>relevant info</strong> only.</p>
-      <% end %>
+  <% @plants.each do |plant| %>
+    <div class="card-product">
+      <%= image_tag plant.picture %>
+      <div class="card-product-infos">
+        <h2><%= plant.variety %></h2>
+        <p><%= plant.description %></p>
+        <%= link_to "Acceder à la plante", biblio_id_path(plant) %>
+      </div>
     </div>
-    <%= link_to "Acceder à la plante", biblio_id_path(@plants) %>
+  <% end %>
 </div>
