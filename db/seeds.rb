@@ -41,5 +41,3 @@ user_plant3.plant = cactus
 user_plant3.save!
 
 puts 'Finiii'
-
-
