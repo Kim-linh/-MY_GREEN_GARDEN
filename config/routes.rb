@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     resources :activities, only: [ :create ]
   end
 
-  resources :plants, only: [ :index, :show ]
+  get '/plants' => 'plants#index', as: 'biblio'
+  get '/plants/:id' => 'plants#show', as: 'biblio/id'
 end
