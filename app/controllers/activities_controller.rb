@@ -5,7 +5,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new(user_plant: @user_plant, date: DateTime.now)
 
     if @activity.save
-      redirect_to user_plants_path(current_user)
+      redirect_to user_plants_path
     else
       render "user_plants/index"
     end
