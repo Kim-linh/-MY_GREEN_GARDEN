@@ -17,9 +17,9 @@ lola = User.create!(first_name: 'Lola', last_name: 'Poulette', email: 'lola@lewa
 
 puts 'add a plant...'
 
-cactus = Plant.create!(variety: "Cactus", description: "J’appartiens à la famille de plantes à fleurs et je viens du Texas, comme dans Texas Ranger.", picture: "https://bergamotte.imgix.net/assets/images/182816/original/IMG_7062.jpg?ixlib=rails-2.1.4&auto=format%2Ccompress&fit=crop&h=1092&q=95&w=1092")
-yucca = Plant.create!(variety: "Yucca", description: "Je suis une plante vivaces arbustive remarquable par mes rosettes de feuilles dures.", picture: "https://bergamotte.imgix.net/assets/images/182776/original/IMG_7573-Edit.jpg?ixlib=rails-2.1.4&auto=format%2Ccompress&fit=crop&h=1092&q=95&w=1092")
-palmier = Plant.create!(variety: "Palmier", description: "Je suis une plante qui vit dans les Caraïbes.", picture:"https://bergamotte.imgix.net/assets/images/14492/original/IMG_7542-Edit.jpg?ixlib=rails-2.1.4&auto=format%2Ccompress&fit=crop&h=1092&q=95&w=1092" )
+cactus = Plant.create!(variety: "Cactus", description: "J’appartiens à la famille de plantes à fleurs et je viens du Texas, comme dans Texas Ranger.", picture: "https://res.cloudinary.com/kimlinh/image/upload/v1559145855/cactus_pazkyu.jpg")
+yucca = Plant.create!(variety: "Yucca", description: "Je suis une plante vivaces arbustive remarquable par mes rosettes de feuilles dures.", picture: "https://res.cloudinary.com/kimlinh/image/upload/v1559145860/yucca_wboju0.jpg")
+palmier = Plant.create!(variety: "Palmier", description: "Je suis une plante qui vit dans les Caraïbes.", picture:"https://res.cloudinary.com/kimlinh/image/upload/v1559145865/palmier_f2xykh.jpg" )
 
 puts 'Plant OK...'
 
