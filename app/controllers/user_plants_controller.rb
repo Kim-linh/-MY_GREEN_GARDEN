@@ -4,6 +4,7 @@ class UserPlantsController < ApplicationController
 
   def index
     @user_plants = UserPlant.all
+    @activity = Activity.new
   end
 
   def show
@@ -15,7 +16,7 @@ class UserPlantsController < ApplicationController
 
   def create
     @user_plant = UserPlant.new(user_plant_params)
-    if @user_plant.save
+    if @user_plant.save!
       redirect_to user_plants_path
     else
       render :new

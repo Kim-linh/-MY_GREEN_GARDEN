@@ -25,12 +25,12 @@ puts 'Plant OK...'
 
 puts 'add a plant for user'
 
-user_plant1 = UserPlant.new(name: "Coco le Cactus", origin_health: 2, picture: "https://mediasv6.truffaut.com/Articles/jpg/0592000/592581_002_1000.jpg")
+user_plant1 = UserPlant.new(name: "Coco le Cactus", origin_health: 1, picture: "https://mediasv6.truffaut.com/Articles/jpg/0592000/592581_002_1000.jpg")
 user_plant1.user = nico
 user_plant1.plant = cactus
 user_plant1.save!
 
-user_plant2 = UserPlant.new(name: "Bob le Yucca", origin_health: 2, picture: "https://mediasv6.truffaut.com/Articles/jpg/0592000/592581_002_1000.jpg")
+user_plant2 = UserPlant.new(name: "Bob le Yucca", origin_health: 4, picture: "https://mediasv6.truffaut.com/Articles/jpg/0592000/592581_002_1000.jpg")
 user_plant2.user = nico
 user_plant2.plant = yucca
 user_plant2.save!
@@ -39,5 +39,16 @@ user_plant3 = UserPlant.new(name: "Coco le Cactus", origin_health: 2, picture: "
 user_plant3.user = lola
 user_plant3.plant = cactus
 user_plant3.save!
+
+user_plant4 = UserPlant.new(name: "Sharley le palmier", origin_health: 3, picture: "https://maplante.ma/wp-content/uploads/2018/01/cycas-revoluta-revoluta-l.jpg")
+user_plant4.user = Tania
+user_plant4.plant = palmier
+user_plant4.save!
+
+user_plant5 = UserPlant.new(name: "Ken le Coco..", origin_health: 0, picture: "http://www.ulevante.fr/wp-content/uploads/2013/07/palmier.jpg")
+user_plant5.user = Barbie
+user_plant5.plant = palmier
+user_plant5.save!
+
 
 puts 'Finiii'
