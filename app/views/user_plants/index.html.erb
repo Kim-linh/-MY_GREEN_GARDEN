@@ -5,6 +5,7 @@
     <%= user_plant.name %>
     <p><%= link_to "Acceder à la show", user_plant_path(user_plant) %> button</p>
     <p><%= link_to "j'arrose ma plante", user_plant_activities_path(user_plant), method: :post %></p>
+    <%= link_to "Je supprime ma plante", user_plant, method: :delete %>
   <% end %>
 </div>
 
