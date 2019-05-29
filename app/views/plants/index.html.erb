@@ -1,9 +1,13 @@
-<h1>Bibliographie des plantes</h1>
-<p>Find me in app/views/plants/index.html.erb</p>
+<div class="container">
+  <h1>Bibliographie des plantes</h1>
 
-<ul>
-  <% @plants.each do |plant| %>
-    <li><%= plant.variety %></li>
-    <li><%= plant.description %></li>
-  <% end %>
-</ul>
+<div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+    <div class="card-product-infos">
+      <% @plants.each do |plant| %>
+      <h2><%= plant.variety %></h2>
+      <p><%= plant.description %> <strong>relevant info</strong> only.</p>
+      <% end %>
+    </div>
+    <%= link_to "Acceder à la plante", biblio_id_path(@plants) %>
+</div>
