@@ -1,15 +1,10 @@
 <div class="container">
 
   <p>ceci est mon index</p>
+
   <% @user_plants.each do |user_plant| %>
     <%= user_plant.name %>
 
-    <!-- toutes les health activités de cette plante -->
-    <% user_plant.activities.each do |activity| %>
-      <%= activity.health %>
-      <!-- toute les date de l'arrosage? ou de toutes les activités -->
-      <%= activity.date%>
-    <% end %>
 
     <!-- la health de la derniere activités de cette plante -->
     <% if user_plant.activities.present? == false %>
@@ -19,10 +14,20 @@
       <% last_activity = activities.last %>
       <%= last_activity.health %>
       <% end %>
+<!-- ----------------------------------------------------------------- -->
 
+<p><strong>J-<%= Water.last.countdown %></strong></p>
+      <h3><strong>Dernier arrosage le <%= Water.last.created_at.strftime("%d")  %></strong></h3>
+
+
+
+<!-- --------------------------------------------------------------------------- -->
 
     <p><%= link_to "Acceder à la show", user_plant_path(user_plant) %> button</p>
-    <p><%= link_to "j'arrose ma plante", user_plant_activities_path(user_plant), method: :post %></p>
+    <p><%= link_to "j'arrose ma plante",  user_plant_waters_path(user_plant), method: :post %></p>
+    <p><%= link_to "Créer une plante ", new_user_plant_path %> button</p>
+
+
 
     <%= simple_form_for [user_plant, @activity] do |f| %>
       <%= f.input :health, collection: Activity.healths.keys, as: :radio_buttons %>
@@ -30,7 +35,7 @@
     <% end %>
 
   <%= link_to "Je supprime ma plante", user_plant, method: :delete %>
-  <% end %>
+<% end %>
 </div>
 
 
