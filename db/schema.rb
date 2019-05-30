@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_05_30_131723) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,6 +30,9 @@ ActiveRecord::Schema.define(version: 2019_05_30_131723) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "picture"
+    t.string "origin"
+    t.text "maintenance"
+    t.string "category"
   end
 
   create_table "user_plants", force: :cascade do |t|

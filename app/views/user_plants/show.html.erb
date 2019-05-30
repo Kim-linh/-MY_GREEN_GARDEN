@@ -1,4 +1,17 @@
  <div class="container">
+  <div class="card-category-global">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+           url('<%= cl_image_path @user_plant.picture if @user_plant.picture.present? %>')">
+      <%= @user_plant.name %>
+    </div>
 
-   <p>ceci est ma show </p>
- </div>
+    <div class="card-category-infos">
+      <p><%= @user_plant.variety %></p>
+      <p><%= @user_plant.description %></p>
+      <p>j'ai été arrosé :<%#= @user_plant.description %></p>
+      <p>état actuel :<%#= @user_plant.description %></p>
+      <p>prochain arrosage :<%#= @user_plant.description %></p>
+    </div>
+  </div>
+</div>
+

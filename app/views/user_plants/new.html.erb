@@ -1,15 +1,14 @@
 <div class="container">
-
-<div class="form-signup">
-  <h1>Hey <%= current_user.first_name %>, crée moi !</h1>
-  <%= simple_form_for @user_plant do |f| %>
-      <%= f.input :name %>
-      <%= f.association :plant %>
-      <%= f.input :origin_health, label: "health", :collection => %w[awful bad ok good excellent] %>
-      <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id }%>
-      <%= f.input :picture %>
-      <%#= f.input :picture_cache, as: :hidden %>
-      <%= f.submit "Ajoute moi", class: "btn btn-primary btn-lg btn-block" %>
-  <% end %>
-  </div>
+  <div class="form-signup">
+    <h1>Hey <%= current_user.first_name %>, crée une plante !</h1>
+    <%= simple_form_for @user_plant do |f| %>
+        <%= f.input :name %>
+        <%= f.association :plant %>
+        <%= f.input :origin_health, label: "health", :collection => %w[awful bad ok good excellent] %>
+        <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id }%>
+        <%= f.input :picture %>
+        <%= f.input :picture_cache, as: :hidden %>
+        <%= f.submit "Je crée ma plante", class: "button" %>
+    <% end %>
+    </div>
 </div>
