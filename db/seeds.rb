@@ -14,6 +14,8 @@ puts 'add a profile...'
 
 nico = User.create!(first_name: 'Nico', last_name: 'gentil', email: 'nico@lewagon.fr', password: 'azerty')
 lola = User.create!(first_name: 'Lola', last_name: 'Poulette', email: 'lola@lewagon.fr', password: 'azerty')
+tania = User.create!(first_name: 'Tania', last_name: 'Johnson', email: 'tania@lewagon.fr', password: 'azerty')
+barbie = User.create!(first_name: 'Barbie', last_name: 'Ken', email: 'barbie@lewagon.fr', password: 'azerty')
 
 puts 'add a plant...'
 
@@ -41,12 +43,12 @@ user_plant3.plant = cactus
 user_plant3.save!
 
 user_plant4 = UserPlant.new(name: "Sharley le palmier", origin_health: 3, picture: "https://maplante.ma/wp-content/uploads/2018/01/cycas-revoluta-revoluta-l.jpg")
-user_plant4.user = Tania
+user_plant4.user = tania
 user_plant4.plant = palmier
 user_plant4.save!
 
 user_plant5 = UserPlant.new(name: "Ken le Coco..", origin_health: 0, picture: "http://www.ulevante.fr/wp-content/uploads/2013/07/palmier.jpg")
-user_plant5.user = Barbie
+user_plant5.user = barbie
 user_plant5.plant = palmier
 user_plant5.save!
 
