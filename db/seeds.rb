@@ -59,5 +59,4 @@ user_plant5.user = barbie
 user_plant5.plant = palmier
 user_plant5.save!
 
-
 puts 'Finiii'

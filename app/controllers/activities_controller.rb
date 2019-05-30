@@ -11,7 +11,7 @@ class ActivitiesController < ApplicationController
       # sinon je recupere la derniere activite dans mon tableau
     end
 
-    @activity = Activity.new(user_plant: @user_plant, date: DateTime.now)
+    @activity = Activity.new(user_plant: @user_plant)
     if activity_params[:health] == nil
       @activity.health = @health
       # si mon user ne coche aucune activite alors je renvoie la dernier health recupere
