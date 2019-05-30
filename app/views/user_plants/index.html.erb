@@ -4,14 +4,14 @@
   <% @user_plants.each do |user_plant| %>
   <%= user_plant.name %>
 
-<!-- toutes les health activités de cette plante -->
-<% user_plant.activities.each do |activity| %>
-    <%= activity.health %>
-    <!-- toute les date de l'arrosage? ou de toutes les activités -->
-    <%= activity.date%>
+  <!-- toutes les health activités de cette plante -->
+  <% user_plant.activities.each do |activity| %>
+  <%= activity.health %>
+  <!-- toute les date de l'arrosage? ou de toutes les activités -->
+  <%= activity.date%>
   <% end %>
 
-<!-- la health de la derniere activités de cette plante -->
+  <!-- la health de la derniere activités de cette plante -->
   <% activities = user_plant.activities %>
   <% last_activity = activities.last %>
   <%= last_activity.health %>
@@ -21,11 +21,11 @@
   <p><%= link_to "j'arrose ma plante", user_plant_activities_path(user_plant), method: :post %></p>
 
   <%= simple_form_for [user_plant, @activity] do |f| %>
-    <%= f.input :health, collection: Activity.healths.keys, as: :radio_buttons %>
-    <%= f.button :submit %>
+  <%= f.input :health, collection: Activity.healths.keys, as: :radio_buttons %>
+  <%= f.button :submit %>
   <% end %>
 
-    <%= link_to "Je supprime ma plante", user_plant, method: :delete %>
+  <%= link_to "Je supprime ma plante", user_plant, method: :delete %>
   <% end %>
 </div>
 
