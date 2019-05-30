@@ -6,7 +6,7 @@ class UserPlant < ApplicationRecord
   validates :origin_health, presence: true
 
   enum origin_health: { awful: 0, bad: 1, ok: 2, good: 3, excellent: 4 }
-
+  mount_uploader :picture, PictureUploader
   # delegate :variety, :description, to: :plant
   def variety
     plant.variety
