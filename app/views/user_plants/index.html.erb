@@ -2,28 +2,32 @@
 
   <p>ceci est mon index</p>
   <% @user_plants.each do |user_plant| %>
-  <%= user_plant.name %>
+    <%= user_plant.name %>
 
-<!-- toutes les health activités de cette plante -->
-<% user_plant.activities.each do |activity| %>
-    <%= activity.health %>
-    <!-- toute les date de l'arrosage? ou de toutes les activités -->
-    <%= activity.date%>
-  <% end %>
+    <!-- toutes les health activités de cette plante -->
+    <% user_plant.activities.each do |activity| %>
+      <%= activity.health %>
+      <!-- toute les date de l'arrosage? ou de toutes les activités -->
+      <%= activity.date%>
+    <% end %>
 
-<!-- la health de la derniere activités de cette plante -->
-  <% activities = user_plant.activities %>
-  <% last_activity = activities.last %>
-  <%= last_activity.health %>
+    <!-- la health de la derniere activités de cette plante -->
+    <% if user_plant.activities.present? == false %>
+      <%= user_plant.origin_health %>
+    <% else %>
+      <% activities = user_plant.activities %>
+      <% last_activity = activities.last %>
+      <%= last_activity.health %>
+      <% end %>
 
 
-  <p><%= link_to "Acceder à la show", user_plant_path(user_plant) %> button</p>
-  <p><%= link_to "j'arrose ma plante", user_plant_activities_path(user_plant), method: :post %></p>
+    <p><%= link_to "Acceder à la show", user_plant_path(user_plant) %> button</p>
+    <p><%= link_to "j'arrose ma plante", user_plant_activities_path(user_plant), method: :post %></p>
 
-  <%= simple_form_for [user_plant, @activity] do |f| %>
-    <%= f.input :health, collection: Activity.healths.keys, as: :radio_buttons %>
-    <%= f.button :submit %>
-  <% end %>
+    <%= simple_form_for [user_plant, @activity] do |f| %>
+      <%= f.input :health, collection: Activity.healths.keys, as: :radio_buttons %>
+      <%= f.button :submit %>
+    <% end %>
 
     <%= link_to "Je supprime ma plante", user_plant, method: :delete %>
   <% end %>
