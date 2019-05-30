@@ -1,16 +1,16 @@
 <div class="container">
   <h1>Bibliographie des plantes</h1>
   <% @plants.each do |plant| %>
-    <div class="card-product">
-      <%= image_tag plant.picture %>
-      <div class="card-product-infos">
+    <div class="card-product p-3 ">
+      <div class="align-self-start mr-3"> <%= image_tag plant.picture, crop: :fill %></div>
+      <div class="card-product-infos media-body">
         <h2><%= plant.variety %></h2>
         <p><strong>Description : </strong><%= plant.description %></p>
         <p><strong>Origine : </strong><%= plant.origin %></p>
         <p><strong>Entretien : </strong><%= plant.maintenance %></p>
         <p><strong>Type de plante : </strong><%= plant.category %></p>
-        <%= link_to "Acceder à la plante", biblio_id_path(plant) %>
       </div>
     </div>
   <% end %>
 </div>
+
