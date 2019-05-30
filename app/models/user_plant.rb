@@ -1,7 +1,7 @@
 class UserPlant < ApplicationRecord
   belongs_to :user
   belongs_to :plant
-  has_many :activities
+  has_many :activities, dependent: :destroy
   validates :name, presence: true
   validates :origin_health, presence: true
 
