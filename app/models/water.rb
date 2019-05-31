@@ -1,5 +1,6 @@
 class Water < ApplicationRecord
   belongs_to :user_plant
+  # has_many :plants, through: :user_plants
 
   def countdown
     dateX = self.created_at + 10.days
