@@ -4,5 +4,6 @@ class WatersController < ApplicationController
   def create
     @user_plant = UserPlant.find(params[:user_plant_id])
     @water = Water.create(user_plant: @user_plant)
+    puts "j'ai arrosé ma plante"
   end
 end

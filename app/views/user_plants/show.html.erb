@@ -6,11 +6,18 @@
     </div>
 
     <div class="card-category-infos">
-      <p><%= @user_plant.variety %></p>
+      <h1><%= @user_plant.variety %></h1>
       <p><%= @user_plant.description %></p>
-      <p>j'ai été arrosé :<%#= @user_plant.description %></p>
-      <p>état actuel :<%#= @user_plant.description %></p>
-      <p>prochain arrosage :<%#= @user_plant.description %></p>
+      <div class="card-category-activities">
+        <p>Arrosé le : <span> <%= Water.last.created_at.strftime("%d" " " "%B") %></span></p>
+        <p>Etat : <span> <%= @user_plant.origin_health %></span></p>
+        <p>Prochain arrosage : <span> J-<%= Water.last.countdown %></span></p>
+        <%= link_to user_plant_waters_path(@user_plant), method: :post do %>
+          <i class="fas fa-tint"></i>
+        <% end %>
+
+      <h1 class="button"><%= link_to "J'accède à mon jardin", user_plants_path %></h1>
+      </div>
     </div>
   </div>
 </div>
