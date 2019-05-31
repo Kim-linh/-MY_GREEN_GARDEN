@@ -1,5 +1,4 @@
 class UserPlantsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
   before_action :find_user_plant, only: [:show, :edit, :update, :delete]
 
   def index
