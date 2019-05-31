@@ -1,5 +1,6 @@
 class UserPlantsController < ApplicationController
-  before_action :find_user_plant, only: [:show, :edit, :update, :delete]
+  skip_before_action :authenticate_user!, only: :index
+  before_action :find_user_plant, only: [:show, :edit, :update, :destroy]
 
   def index
     @user_plants = UserPlant.all
@@ -23,8 +24,7 @@ class UserPlantsController < ApplicationController
   end
 
   def destroy
-    user_plant = UserPlant.find(params[:id])
-    user_plant.destroy
+    @user_plant.delete
     redirect_to user_plants_path
   end
 
