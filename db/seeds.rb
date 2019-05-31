@@ -60,3 +60,8 @@ user_plant5.plant = palmier
 user_plant5.save!
 
 puts 'Finiii'
+
+water1 = Water.create!(user_plant: UserPlant.last)
+
+
+
