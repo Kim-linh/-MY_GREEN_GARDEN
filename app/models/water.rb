@@ -3,7 +3,9 @@ class Water < ApplicationRecord
   # has_many :plants, through: :user_plants
 
   def countdown
-    dateX = self.created_at + 10.days
+    days = Plant.last.days
+    daily_water = days.days
+    dateX = self.created_at + daily_water.days
     date_seconds = dateX - DateTime.now
     date_to_date = date_seconds / (60 * 60 * 24)
     days = date_to_date.round
