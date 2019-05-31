@@ -1,5 +1,4 @@
 <div class="container">
-
   <h1>Bienvenue sur votre jardin</h1>
   <p class="button"><%= link_to "Créer une plante ", new_user_plant_path %> </p>
   <div class="row">
@@ -23,12 +22,12 @@
               <% end %>
               <p>
                 <strong>
-                  J-<%= Water.last.countdown %>
+                  J-<%= user_plant.waters.last.countdown %>
                 </strong>
               </p>
               <h3>
                 <strong>
-                  Dernier arrosage le <%= Water.last.created_at.strftime("%d") %>
+                  Dernier arrosage le <%= user_plant.waters.last.created_at.strftime("%d, %h") %>
                 </strong>
               </h3>
             </p>

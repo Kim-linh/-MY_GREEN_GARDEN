@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_30_131723) do
+ActiveRecord::Schema.define(version: 2019_05_31_104356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2019_05_30_131723) do
     t.string "origin"
     t.text "maintenance"
     t.string "category"
+    t.integer "days", default: 0, null: false
   end
 
   create_table "user_plants", force: :cascade do |t|
