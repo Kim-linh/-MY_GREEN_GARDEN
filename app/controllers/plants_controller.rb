@@ -3,7 +3,8 @@ class PlantsController < ApplicationController
 
   def index
     if params[:query].present?
-      @plants = Plant.where("variety ILIKE ?", "%#{params[:query]}%")
+      sql_query = "variety ILIKE :query OR origin ILIKE :query OR category ILIKE :query"
+      @plants = Plant.where(sql_query, query: "%#{params[:query]}%")
     else
       @plants = Plant.all
     end
