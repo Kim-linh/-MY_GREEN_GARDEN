@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   get '/plants' => 'plants#index', as: 'biblio'
   get '/plants/:id' => 'plants#show', as: 'biblio/id'
+  get '/florists' => 'pages#florists', as: 'florists'
 end

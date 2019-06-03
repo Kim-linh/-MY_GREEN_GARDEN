@@ -1,19 +1,22 @@
-<div class="container">
-  <div class="banner" style ="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-    url('https://res.cloudinary.com/kimlinh/image/upload/v1559145474/banner_wmoj91.jpg');">
-    <div>
-      <h1>Keep your plant alive !</h1>
-      <p>Grâce à des alertes,<br> MyGreenGarden vous aide à prendre soin de vos plantes</p>
-    </div>
-    <%= link_to "J'accède à mon jardin", user_plants_path %>
+<div class="banner" style ="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+  url('https://res.cloudinary.com/kimlinh/image/upload/v1559145474/banner_wmoj91.jpg');">
+  <div class="container">
+    <h1>Keep your plant alive !</h1>
+    <p>Grâce à des alertes,<br> MyGreenGarden vous aide à prendre soin de vos plantes</p>
+    <p><%= link_to "J'accède à mon jardin", user_plants_path %></p>
   </div>
+</div>
 
-  <h1>Astuce de la semaine</h1>
-    <div class="row">
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Astuce de la semaine</h1>
       <div class=" col-12 col-sm-4 my-2">
         <h3>diy Flower pots</h3>
         <div class="card-category">
           <%=  link_to image_tag("https://res.cloudinary.com/kimlinh/image/upload/v1559313805/astuces_lhcit5.png", :class => 'card-category'), "https://www.facebook.com/watch/?v=458112541660318"%>
+        </div>
       </div>
     </div>
+  </div>
 </div>
