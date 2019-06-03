@@ -20,6 +20,7 @@
                 <% last_activity = activities.last %>
                 <%= last_activity.health %>
               <% end %>
+              <!--faire un input pour le bouton arrosage-->
               <p>
                 <strong>
                   J-<%= user_plant.waters.last.countdown %>
@@ -40,7 +41,6 @@
     <% end %>
   </div>
 </div>
-
 
 <!-- <p class="button"><%#= link_to "j'arrose ma plante",  user_plant_waters_path(user_plant), method: :post %></p> -->
 

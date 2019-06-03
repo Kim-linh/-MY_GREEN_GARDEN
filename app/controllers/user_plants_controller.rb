@@ -18,6 +18,7 @@ class UserPlantsController < ApplicationController
     @user_plant = UserPlant.new(user_plant_params)
     if @user_plant.save!
       redirect_to user_plants_path
+      #envoyer un message
     else
       render :new
     end
