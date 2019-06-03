@@ -23,6 +23,14 @@
   .bar-label {
     display: inline-block;
     margin-top: -6px;
+    font-size: 32px;
+    a{
+      text-decoration: none;
+      color: white;
+    }
+    a:hover{
+      font-size: 32px;
+    }
 
     @for $i from 2 through 11 {
       &:nth-child(#{$i}) {
