@@ -4,7 +4,6 @@
            url('<%= cl_image_path @user_plant.picture if @user_plant.picture.present? %>')">
       <%= @user_plant.name %>
     </div>
-
     <div class="card-category-infos">
       <h1><%= @user_plant.variety %></h1>
       <p><%= @user_plant.description %></p>
@@ -12,13 +11,50 @@
         <p>Arrosé le : <span> <%= Water.last.created_at.strftime("%d" " " "%B") %></span></p>
         <p>Etat : <span> <%= @user_plant.origin_health %></span></p>
         <p>Prochain arrosage : <span> J-<%= Water.last.countdown %></span></p>
-        <%= link_to user_plant_waters_path(@user_plant), method: :post do %>
-          <i class="fas fa-tint"></i>
-        <% end %>
+        <div class="bar-container" style="height: 200px; width: 200px">
+          <div class="goal-bar">
+            <div class="bar-wrap">
+              <hr class="bar-line">
+              <hr class="bar-line">
+              <hr class="bar-line">
+              <hr class="bar-line">
+              <hr class="bar-line">
+              <hr class="bar-line">
+              <hr class="bar-line">
+              <hr class="bar-line">
+              <hr class="bar-line">
+              <hr class="bar-line">
+              <div
+              class="bar yellow" style="transform: translateY(0%);">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="500px" height="500px" viewBox="0 0 300 500" enable-background="new 0 0 300 500" xml:space="preserve" style="position:absolute;top:10;left:0;animation-name: waveAction; animation-iteration-count: infinite; animation-timing-function: linear; animation-duration: 1.5s; width: 300px; height: 500px; fill: rgb(250, 172, 255);"><path fill="#04ACFF" d="M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,2.4-40.6,2.4c-12.3,1.1-30.3,1.8-31.9,1.9c-2-0.1-19.7-0.8-32-1.9c0,0-25.8-2.3-40.8-2.4c-15,0-40.8,2.4-40.8,2.4c-12.3,1.1-30.4,1.8-32,1.9c-2-0.1-20-0.8-32.2-1.9c0,0-3.1-0.3-8.1-0.7V500H300z" style="width:300px;height=500px" id="waveShape"></path></svg>
+              <div class="bar-info">
+                <div class="bar-info-inner"><span class="bar-label"> <%= link_to "J-#{Water.last.countdown }", user_plant_waters_path(@user_plant), method: :post%>      </span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%= link_to user_plant_waters_path(@user_plant), method: :post do %>
+      <i class="fas fa-tint"></i>
+      <% end %>
+
+
 
       <h1 class="button"><%= link_to "J'accède à mon jardin", user_plants_path %></h1>
-      </div>
     </div>
   </div>
 </div>
+</div>
+
+
+<!-- <div>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<div id="container" style="min-width: 200px; height: 300px; margin: 0 auto"></div>
+<div> -->
+<!-- adapted from https://codepen.io/JulienMelissas/pen/dYWGKR and https://stackoverflow.com/questions/29738787/filling-water-animation -->
+
 

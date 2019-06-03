@@ -1,0 +1,124 @@
+/* adapted from https://codepen.io/JulienMelissas/pen/dYWGKR */
+
+.bar-container {
+  width: 150px;
+  padding: 30px;
+}
+
+.goal-bar {
+  position: relative;
+  height: 100%;
+  padding-left: 30px;
+
+  .bar-labels {
+    position: absolute;
+    top: 0px;
+    left: -10px;
+    width: 30px;
+    height: 100%;
+    font-size: 12px;
+    line-height: 12px;
+    color: rgb(199, 199, 199);
+  }
+  .bar-label {
+    display: inline-block;
+    margin-top: -6px;
+
+    @for $i from 2 through 11 {
+      &:nth-child(#{$i}) {
+        top: percentage(($i * 0.1) - 0.1);
+      }
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-top: -12px;
+    }
+  }
+
+  .bar-wrap {
+    position: relative;
+    height: 100%;
+    background: rgba(242, 242, 242, 0.5);
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: -5px 5px 5px hsla(0, 0%, 0%, 0.15);
+  }
+
+  .bar-line {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-top: 1px solid rgb(199, 199, 199);
+
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        top: percentage($i / 10);
+      }
+    }
+  }
+
+  .bar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(53, 218, 11, 0.75);
+    transform: translateY(100%);
+    transition: all 0.5s ease-in-out;
+    animation: glowing 2s ease-out infinite;
+  }
+
+  .bar.blue {
+    background: rgb(4, 172, 255);
+  }
+  .bar.yellow {
+    background: rgba(235, 255, 153, 0.75);
+  }
+
+  .bar.red {
+    background: rgba(218, 11, 11, 0.75);
+  }
+
+  .bar.fast {
+    animation: glowing 1s ease-out infinite;
+  }
+
+  @keyframes glowing {
+    100% {
+      box-shadow: none;
+    }
+    50% {
+      box-shadow: inset 0 0 25px #fff;
+    }
+    10% {
+      box-shadow: inset 0 0 50px #fff;
+    }
+  }
+
+  .bar-info {
+    position: relative;
+
+
+    .bar-info-inner {
+      font-size: 2em;
+      color: white;
+      text-shadow: 0 0 2px black;
+      text-align: center;
+    }
+  }
+}
+
+@keyframes waveAction {
+    0% {
+        transform: translate(-150px, 0);
+    }
+    100% {
+        transform: translate(0px, 0);
+    }
+}
