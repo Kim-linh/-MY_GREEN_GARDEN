@@ -15,8 +15,12 @@
   color: black;
   opacity: 0.5;
   text-decoration: none;
+  &:hover {
+    color: green !important;
+  }
+  &.active {
+    color: green !important;
+  }
 }
 
-.nav-link a:hover {
-  opacity: 2;
-}
+

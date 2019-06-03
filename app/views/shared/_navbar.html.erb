@@ -11,14 +11,26 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Biblio", biblio_path, class: "nav-link" %>
+        <li class="nav-item">
+          <% if request.url == biblio_url %>
+            <%= link_to "Biblio", biblio_path, class: "nav-link active" %>
+          <% else %>
+            <%= link_to "Biblio", biblio_path, class: "nav-link" %>
+          <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to "Mon jardin", user_plants_path, class: "nav-link" %>
+          <% if request.url == user_plants_url %>
+            <%= link_to "Mon jardin", user_plants_path, class: "nav-link active" %>
+          <% else %>
+            <%= link_to "Mon jardin", user_plants_path, class: "nav-link" %>
+          <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to "Fleuristes", florists_path, class: "nav-link" %>
+          <% if request.url == florists_url %>
+            <%= link_to "Fleuristes", florists_path, class: "nav-link active" %>
+          <% else %>
+            <%= link_to "Fleuristes", florists_path, class: "nav-link" %>
+          <% end %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/zuoxgsu2nprklyrvnwzj.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -27,7 +39,7 @@
           </div>
         </li>
       <% else %>
-        <li class="nav-item active">
+        <li class="nav-item">
           <%= link_to "Biblio", biblio_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
