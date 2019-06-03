@@ -11,8 +11,6 @@ UserPlant.destroy_all
 Plant.destroy_all
 User.destroy_all
 
-
-
 puts 'add a profile...'
 
 nico = User.create!(first_name: 'Nico', last_name: 'gentil', email: 'nico@lewagon.fr', password: 'azerty')
@@ -21,7 +19,6 @@ tania = User.create!(first_name: 'Tania', last_name: 'Johnson', email: 'tania@le
 barbie = User.create!(first_name: 'Barbie', last_name: 'Ken', email: 'barbie@lewagon.fr', password: 'azerty')
 
 puts 'add a plant...'
-
 
 cactus = Plant.create!(days: 17, variety: "Cactus", description:"Je ne manque pas d’apporter une belle dose de piquant à ton quotidien.", origin: "Je suis née en Afrique.", maintenance: "Je peux t'apporter une belle dose de piquant à ta vie quotidienne si tu m'arroses 1 à 2 fois par mois en été et peu ou pas en hiver. Les apports en eau doivent être très légers.", category: "Plante à fleurs, plante grasse", picture: "https://res.cloudinary.com/kimlinh/image/upload/v1559145855/cactus_pazkyu.jpg")
 yucca = Plant.create!(days: 7 , variety: "Yucca", description: "Je suis une plante vivaces arbustive remarquable par mes rosettes de feuilles dures.", origin: "Je viens d'Europe du Sud et des Antilles.", maintenance: "Il faut que tu m'apportes beaucoup de lumière pour que je ne manque pas d'allure. Tu dois aussi nettoyer régulièrement mes feuilles et m'arroser 1 fois par semaine toute l'année.", category: "Plante à fleurs, plante exotique, plante  arbustive", picture: "https://res.cloudinary.com/kimlinh/image/upload/v1559145860/yucca_wboju0.jpg")
