@@ -1,5 +1,14 @@
 <div class="container">
   <h1>Bibliographie des plantes</h1>
+
+<%= form_tag biblio_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a plant"
+  %>
+<% end %>
+
   <% @plants.each do |plant| %>
     <div class="card-product p-3 ">
       <div class="align-self-start mr-3"> <%= image_tag plant.picture, crop: :fill %></div>
@@ -13,4 +22,3 @@
     </div>
   <% end %>
 </div>
-
