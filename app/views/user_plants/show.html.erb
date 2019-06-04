@@ -3,6 +3,7 @@
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
            url('<%= cl_image_path @user_plant.picture if @user_plant.picture.present? %>')">
       <%= @user_plant.name %>
+      <%= link_to "Changer mon nom", edit_user_plant_path(@user_plant), class:"btn btn-primary" %>
     </div>
     <div class="card-category-infos">
       <h1><%= @user_plant.variety %></h1>

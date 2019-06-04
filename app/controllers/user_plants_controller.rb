@@ -25,7 +25,14 @@ class UserPlantsController < ApplicationController
   end
 
   def edit
+  end
 
+  def update
+    if @user_plant.update(user_plant_params)
+      redirect_to user_plant_path(@user_plant)
+    else
+      render :edit
+    end
   end
 
   def destroy
