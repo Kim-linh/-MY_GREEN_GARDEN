@@ -1,52 +1,49 @@
-<div class="container">
-  <h1>Bienvenue sur votre jardin</h1>
-  <p class="button"><%= link_to "Créer une plante ", new_user_plant_path %> </p>
-  <div class="row">
-    <% @user_plants.each do |user_plant| %>
-      <div class=" col-12 col-sm-4 my-2">
-        <div class="card h-100" style="width: 18rem;">
-          <img class="card-img-top"  src="<%= cl_image_path user_plant.picture if user_plant.picture.present? %>" style="max-height: 300px">
-          <div class="card-body">
-            <h1 class="card-title"><%= user_plant.name %>
-              <%= link_to user_plant_waters_path(user_plant), method: :post, class: "card-link" do %>
-                  <i class="fas fa-tint"></i>
-              <% end %>
-            </h1>
-            <p class="card-text">
-              <% if user_plant.activities.present? == false %>
-                <%= user_plant.origin_health %>
-              <% else %>
-                <% activities = user_plant.activities %>
-                <% last_activity = activities.last %>
-                <%= last_activity.health %>
-              <% end %>
-              <!--faire un input pour le bouton arrosage-->
-              <p>
-                <strong>
-                  J-<%= user_plant.waters.last.countdown %>
-                </strong>
-              </p>
-              <h3>
-                <strong>
-                  Dernier arrosage le <%= user_plant.waters.last.created_at.strftime("%d, %h") %>
-                </strong>
-              </h3>
-            </p>
-            <p class="button"><%= link_to "En savoir plus", user_plant_path(user_plant) %></p>
-            <p class="button"><%= link_to "Je supprime ma plante", user_plant_path(user_plant), method: :delete, data: { confirm: 'Are you sure?' } %>
-              </p>
+<div class="bg-garden"  style ="background-image:  linear-gradient(180deg, rgba(255,255,255,0.25) 0, rgba(255,255,255,1) 100%),url('<%= image_path "bg_jardin.jpg" %>')">
+  <div class="container">
+    <div class="garden-title">Bienvenue sur votre jardin</div>
+    <p class="button text-center"><%= link_to "Créer une plante ", new_user_plant_path %> </p>
+  </div>
+  <div class="container">
+    <div class="row">
+      <% @user_plants.each do |user_plant| %>
+        <div class="col-12 col-md-4 text-center my-3">
+          <div class="card h-100">
+            <img class="card-img-top"  src="<%= cl_image_path user_plant.picture if user_plant.picture.present? %>">
+            <div class="card-body">
+              <h1 class="card-title"><%= user_plant.name %>
+              </h1>
+              <div class="card-text d-flex justify-content-around">
+                <p class="my-auto">
+                  Mon état :<% if user_plant.activities.present? == false %>
+                    <%= user_plant.origin_health %>
+                  <% else %>
+                    <% activities = user_plant.activities %>
+                    <% last_activity = activities.last %>
+                    <%= last_activity.health %>
+                  <% end %>
+                </p>
+                <p class="my-auto">
+                  <strong>
+                    J-<%= user_plant.waters.last.countdown %>
+                  </strong>
+                  <%= link_to user_plant_waters_path(user_plant), method: :post, class: "card-link" do %>
+                    <i class="fas fa-tint"></i>
+                <% end %>
+                </p>
+                </div>
+                <h3>
+                  <strong>
+                    Dernier arrosage le <%= user_plant.waters.last.created_at.strftime("%d, %h") %>
+                  </strong>
+                </h3>
+
+              <p class="button"><%= link_to "En savoir plus", user_plant_path(user_plant) %></p>
+              <p class="button"><%= link_to "<i class='fas fa-trash-alt'></i>".html_safe, user_plant_path(user_plant), method: :delete, data: { confirm: 'Are you sure?' } %>
+                </p>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
-
-<!-- <p class="button"><%#= link_to "j'arrose ma plante",  user_plant_waters_path(user_plant), method: :post %></p> -->
-
-<%#= simple_form_for [user_plant, @activity] do |f| %>
-  <%#= f.input :health, collection: Activity.healths.keys, as: :radio_buttons %>
-  <%#= f.button :submit %>
-
-
-
