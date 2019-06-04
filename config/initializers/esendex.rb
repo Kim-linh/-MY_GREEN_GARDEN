@@ -1,5 +1,5 @@
 Esendex.configure do |config|
-  config.username = "<MyGreenGarden>"
-  config.password = "<Lewagon246!>"
-  config.account_reference = "<EX0289774>"
+  config.username = ENV["ESENDEX_EMAIL"]
+  config.password = ENV["ESENDEX_EMAIL_PASSWORD"]
+  config.account_reference = ENV["ESENDEX_ACCOUNT"]
 end

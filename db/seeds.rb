@@ -13,10 +13,11 @@ User.destroy_all
 
 puts 'add a profile...'
 
-nico = User.create!(first_name: 'Nico', last_name: 'gentil', email: 'nico@lewagon.fr', password: 'azerty')
-lola = User.create!(first_name: 'Lola', last_name: 'Poulette', email: 'lola@lewagon.fr', password: 'azerty')
-tania = User.create!(first_name: 'Tania', last_name: 'Johnson', email: 'tania@lewagon.fr', password: 'azerty')
-barbie = User.create!(first_name: 'Barbie', last_name: 'Ken', email: 'barbie@lewagon.fr', password: 'azerty')
+nico = User.create!(first_name: 'Nico', last_name: 'gentil', email: 'nico@lewagon.fr', password: 'azerty', number: "0123456789")
+lola = User.create!(first_name: 'Lola', last_name: 'Poulette', email: 'lola@lewagon.fr', password: 'azerty', number: "0123456789")
+tania = User.create!(first_name: 'Tania', last_name: 'Johnson', email: 'tania@lewagon.fr', password: 'azerty', number: "0123456789")
+barbie = User.create!(first_name: 'Barbie', last_name: 'Ken', email: 'barbie@lewagon.fr', password: 'azerty', number: "0123456789")
+moranne = User.create!(first_name: 'Moranne', last_name: 'Bleuzen', email: 'moranne.bleuzen@kedgebs.com', password: 'azerty', number: "0617948865")
 
 puts 'add a plant...'
 

@@ -8,6 +8,9 @@ class UserPlantsController < ApplicationController
   end
 
   def show
+    @last_water = @user_plant.waters.last
+    # @last_water.update(created_at: DateTime.now - 15.days)
+    @level = ((1 - (@last_water.countdown.to_f / @user_plant.plant.days)) * 140).to_i
   end
 
   def new
@@ -36,11 +39,15 @@ class UserPlantsController < ApplicationController
   end
 
   def destroy
-    @user_plant.delete
+    @user_plant.destroy
     redirect_to user_plants_path
   end
 
   private
+
+  def user_params
+    params.require(:user_plant).permit(:email)
+  end
 
   def find_user_plant
     @user_plant = UserPlant.find(params[:id])

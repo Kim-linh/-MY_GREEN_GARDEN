@@ -8,7 +8,8 @@ class Water < ApplicationRecord
       date_seconds = futur_date - DateTime.now
       date_to_date = date_seconds / (60 * 60 * 24)
       days_to_water = date_to_date.round
-    # hours_to_date = (date_to_date - days) * 24
-    # hours_to_date.round
+      # Affichage en seconde
+      # hours_to_date = (date_to_date - date_seconds) * 24
+      # hours_to_date.round
   end
 end
