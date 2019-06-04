@@ -25,7 +25,7 @@ class UserPlantsController < ApplicationController
   end
 
   def destroy
-    @user_plant.delete
+    @user_plant.destroy
     redirect_to user_plants_path
   end
 
