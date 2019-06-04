@@ -14,7 +14,7 @@ gem 'font-awesome-sass', '~> 5.6.1'
 gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
-gem 'webpacker', '4.0.2'
+gem 'webpacker', '4.0.0'
 gem 'devise'
 
 gem 'cloudinary', '~> 1.9.1'
