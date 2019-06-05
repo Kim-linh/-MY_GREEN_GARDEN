@@ -30,11 +30,41 @@
   color: white;
   font-family: 'Roboto', sans-serif;
   text-align: center;
+  text-shadow: 1px 1px #333333;
 }
 
-.video-home img {
-  width: 75%;
+.home-title h2 {
+  margin-top: 10px;
 }
 
+.card-tips {
+  margin: 10px 0 20px 20px !important;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  padding: 20px 5px;
+}
+
+.card-tips img {
+  background-size: cover;
+  width: 75px;
+  object-fit: cover;
+  padding-right: 5px;
+}
+
+.card-tips p {
+  font-size: 12px;
+  opacity: .7;
+  margin-top: 15px;
+}
+
+.chevron {
+  color: #ffffff;
+}
+
+.chevron a {
+  background-color: transparent !important;
+}
 
 
