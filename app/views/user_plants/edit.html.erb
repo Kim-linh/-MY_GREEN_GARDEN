@@ -1,5 +1,6 @@
 <%= simple_form_for @user_plant do |f| %>
-  <%= f.input :name  %>
-  <%= f.input :picture %>
-  <%= f.submit  %>
+  <%= f.input :name, label: "Nom de la plante"  %>
+  <%= f.input :origin_health, label: "Etat de la plante", :collection => %w[awful bad ok good excellent] %>
+  <%= f.input :picture, label: "Photo" %>
+  <%= f.submit "Mettre à jour"   %>
 <% end %>
