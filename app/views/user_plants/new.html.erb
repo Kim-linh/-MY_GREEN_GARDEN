@@ -2,6 +2,7 @@
   <div class="form-signup">
     <h1>Hey <%= current_user.first_name %>, crée une plante !</h1>
     <%= simple_form_for @user_plant do |f| %>
+        <%= f.error_notification %>
         <%= f.input :name, label: "Nom de la plante"%>
         <%= f.association :plant %>
         <%= f.input :origin_health, label: "Etat de la plante", :collection => %w[critique terne impeccable magnifique splendide] %>

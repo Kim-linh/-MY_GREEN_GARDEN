@@ -1,4 +1,5 @@
 <%= simple_form_for @user_plant do |f| %>
+  <%= f.error_notification %>
   <%= f.input :name, label: "Nom de la plante"  %>
   <%= f.input :origin_health, label: "Etat de la plante", :collection => %w[critique terne impeccable magnifique splendide] %>
   <%= f.input :picture, label: "Photo" %>
