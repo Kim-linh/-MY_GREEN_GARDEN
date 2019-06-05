@@ -14,30 +14,30 @@
               </h1>
               <div class="card-text d-flex justify-content-around">
                 <p class="my-auto">
-                  Mon état :<% if user_plant.activities.present? == false %>
+<!--                   Mon état :<% if user_plant.activities.present? == false %>
                     <%= user_plant.origin_health %>
                   <% else %>
                     <% activities = user_plant.activities %>
                     <% last_activity = activities.last %>
                     <%= last_activity.health %>
-                  <% end %>
+                  <% end %> -->
                 </p>
-                <p class="my-auto">
+<!--                 <p class="my-auto">
                   <strong>
                     J-<%= user_plant.waters.last.countdown %>
-                  </strong>
-                  <%= link_to user_plant_waters_path(user_plant), method: :post, class: "card-link" do %>
-                    <i class="fas fa-tint"></i>
-                <% end %>
+                  </strong> -->
                 </p>
                 </div>
-                <h3>
-                  <strong>
+                <!-- <h3> -->
+<!--                   <strong>
                     Dernier arrosage le <%= user_plant.waters.last.created_at.strftime("%d, %h") %>
-                  </strong>
-                </h3>
+                  </strong> -->
+                <!-- </h3> -->
 
-              <p class="button"><%= link_to "En savoir plus", user_plant_path(user_plant) %></p>
+              <p class="button"><%= link_to "Voir ma plante", user_plant_path(user_plant) %>
+                <%= link_to user_plant_waters_path(user_plant), method: :post, class: "card-link" do %>
+                    <i class="fas fa-tint"></i>
+                <% end %></p>
               <p class="button"><%= link_to "<i class='fas fa-trash-alt'></i>".html_safe, user_plant_path(user_plant), method: :delete, data: { confirm: 'Are you sure?' } %>
                 </p>
             </div>
