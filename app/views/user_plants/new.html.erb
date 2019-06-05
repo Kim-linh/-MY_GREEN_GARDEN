@@ -4,7 +4,7 @@
     <%= simple_form_for @user_plant do |f| %>
         <%= f.input :name, label: "Nom de la plante"%>
         <%= f.association :plant %>
-        <%= f.input :origin_health, label: "Etat de la plante", :collection => %w[ awful bad ok good excellent] %>
+        <%= f.input :origin_health, label: "Etat de la plante", :collection => %w[critique terne impeccable magnifique splendide] %>
         <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id }%>
         <%= f.input :picture, label: "Photo" %>
         <%= f.input :picture_cache, as: :hidden %>
