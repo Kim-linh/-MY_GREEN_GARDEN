@@ -28,12 +28,14 @@ class UserPlantsController < ApplicationController
   end
 
   def edit
-    @user_plant = UserPlant.find(params[:id])
   end
 
   def update
-    @user_plant = UserPlant.find(params[:id])
-    @user_plant.update(user_params)
+    if @user_plant.update(user_plant_params)
+      redirect_to user_plant_path(@user_plant)
+    else
+      render :edit
+    end
   end
 
   def destroy
