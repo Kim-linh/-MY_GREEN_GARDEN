@@ -36,27 +36,27 @@ puts 'Plant OK...'
 
 puts 'add a plant for user'
 
-user_plant1 = UserPlant.new(name: "Coco le Cactus", origin_health: 1, remote_picture_url: "https://res.cloudinary.com/kimlinh/image/upload/v1559145855/cactus_pazkyu.jpg")
+user_plant1 = UserPlant.new(name: "Coco", origin_health: 1, remote_picture_url: "https://res.cloudinary.com/kimlinh/image/upload/v1559145855/cactus_pazkyu.jpg")
 user_plant1.user = nico
 user_plant1.plant = cactus
 user_plant1.save!
 
-user_plant2 = UserPlant.new(name: "Bob le Yucca", origin_health: 4, remote_picture_url: "https://res.cloudinary.com/kimlinh/image/upload/v1559746090/plant_5_c9ekqr.jpg")
+user_plant2 = UserPlant.new(name: "Bob", origin_health: 4, remote_picture_url: "https://res.cloudinary.com/kimlinh/image/upload/v1559746090/plant_5_c9ekqr.jpg")
 user_plant2.user = nico
 user_plant2.plant = yucca
 user_plant2.save!
 
-user_plant3 = UserPlant.new(name: "Coco le Cactus", origin_health: 2, remote_picture_url: "https://mediasv6.truffaut.com/Articles/jpg/0592000/592581_002_1000.jpg")
+user_plant3 = UserPlant.new(name: "Kiki", origin_health: 2, remote_picture_url: "https://res.cloudinary.com/kimlinh/image/upload/v1559742221/plant2_sbqxeq.jpg")
 user_plant3.user = lola
 user_plant3.plant = cactus
 user_plant3.save!
 
-user_plant4 = UserPlant.new(name: "Sharley le palmier", origin_health: 3, remote_picture_url: "https://res.cloudinary.com/kimlinh/image/upload/v1559742227/plant1_ttooxi.jpg")
+user_plant4 = UserPlant.new(name: "Sharley", origin_health: 3, remote_picture_url: "https://res.cloudinary.com/kimlinh/image/upload/v1559742227/plant1_ttooxi.jpg")
 user_plant4.user = tania
 user_plant4.plant = palmier
 user_plant4.save!
 
-user_plant5 = UserPlant.new(name: "Ken le Coco", origin_health: 0, remote_picture_url: "https://res.cloudinary.com/kimlinh/image/upload/v1559742217/plant3_ywjd1a.jpg")
+user_plant5 = UserPlant.new(name: "Ken", origin_health: 0, remote_picture_url: "https://res.cloudinary.com/kimlinh/image/upload/v1559742217/plant3_ywjd1a.jpg")
 user_plant5.user = barbie
 user_plant5.plant = palmier
 user_plant5.save!
