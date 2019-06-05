@@ -3,7 +3,7 @@ class UserPlantsController < ApplicationController
   before_action :find_user_plant, only: [:show, :edit, :update, :destroy]
 
   def index
-    @user_plants = UserPlant.all
+    @user_plants = UserPlant.where(user: current_user)
     @activity = Activity.new
   end
 
@@ -44,6 +44,10 @@ class UserPlantsController < ApplicationController
   end
 
   private
+
+  # def user_plant_age(user_plant)
+  #   @age = (DateTime.now.to_i - user_plant.created_at.to_i) / (60 * 60 * 24)
+  # end
 
   def user_params
     params.require(:user_plant).permit(:email)
