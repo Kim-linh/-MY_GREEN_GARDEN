@@ -1,24 +1,32 @@
-<div class="container">
-  <h1>Bibliographie des plantes</h1>
-
-<%= form_tag biblio_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a plant"
-  %>
-<% end %>
-
-  <% @plants.each do |plant| %>
-    <div class="card-product p-3 ">
-      <div class="align-self-start mr-3"> <%= image_tag plant.picture, crop: :fill %></div>
-      <div class="card-product-infos media-body">
-        <h2><%= plant.variety %></h2>
-        <p><strong>Description : </strong><%= plant.description %></p>
-        <p><strong>Origine : </strong><%= plant.origin %></p>
-        <p><strong>Entretien : </strong><%= plant.maintenance %></p>
-        <p><strong>Type de plante : </strong><%= plant.category %></p>
+<div style ="background-image:  linear-gradient(180deg, rgba(255,255,255,0.25) 0, rgba(255,255,255,1) 100%),url('<%= image_path "bg_jardin.jpg" %>')">
+  <div class="container">
+    <div class="garden-title">Bibliothèque des plantes</div>
+  </div>
+  <div class="container">
+    <%= form_tag biblio_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Tu cherches une plante ?"
+    %>
+    <% end %>
+  </div>
+  <div class="container">
+    <% @plants.each do |plant| %>
+      <div class="col-12 col-md-3 text-center my-3">
+        <div class="card h-100">
+          <div class="card-img-top my-3">
+            <%= image_tag plant.picture, crop: :fill, :width=>250%>
+          </div>
+          <div class="infos-plants">
+            <h2><%= plant.variety %></h2>
+            <p><strong>Description : </strong><%= plant.description %></p>
+            <p><strong>Origine : </strong><%= plant.origin %></p>
+            <p><strong>Entretien : </strong><%= plant.maintenance %></p>
+            <p><strong>Type de plante : </strong><%= plant.category %></p>
+          </div>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

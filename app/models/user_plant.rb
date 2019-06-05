@@ -7,7 +7,7 @@ class UserPlant < ApplicationRecord
   validates :origin_health, presence: true
   after_create :first_water
 
-  enum origin_health: { awful: 0, bad: 1, ok: 2, good: 3, excellent: 4 }
+  enum origin_health: { critique: 0, terne: 1, impeccable: 2, magnifique: 3, splendide: 4 }
   mount_uploader :picture, PictureUploader
   # delegate :variety, :description, to: :plant
   def variety
@@ -17,7 +17,6 @@ class UserPlant < ApplicationRecord
   def description
     plant.description
   end
-
 
   def first_water
     Water.create(user_plant: self)
