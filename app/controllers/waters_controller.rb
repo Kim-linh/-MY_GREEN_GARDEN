@@ -4,7 +4,7 @@ class WatersController < ApplicationController
   def create
     @user_plant = UserPlant.find(params[:user_plant_id])
     @water = Water.create(user_plant: @user_plant)
-    flash[:notice] = " la plante est arrosé"
+    flash[:notice] = "#{@user_plant.name} est arrosé(e)"
     redirect_to @user_plant
   end
 
