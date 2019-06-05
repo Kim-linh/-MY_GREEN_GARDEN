@@ -48,7 +48,7 @@ user_plant2.save!
 
 user_plant3 = UserPlant.new(name: "Coco le Cactus", origin_health: 2, remote_picture_url: "https://mediasv6.truffaut.com/Articles/jpg/0592000/592581_002_1000.jpg")
 user_plant3.user = lola
-user_plant3.plant = arbuste
+user_plant3.plant = cactus
 user_plant3.save!
 
 user_plant4 = UserPlant.new(name: "Sharley le palmier", origin_health: 3, remote_picture_url: "https://res.cloudinary.com/kimlinh/image/upload/v1559742227/plant1_ttooxi.jpg")
