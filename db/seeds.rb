@@ -36,7 +36,7 @@ puts 'Plant OK...'
 
 puts 'add a plant for user'
 
-user_plant1 = UserPlant.new(name: "Coco le Cactus", origin_health: 1, remote_picture_url: "https://mediasv6.truffaut.com/Articles/jpg/0592000/592581_002_1000.jpg")
+user_plant1 = UserPlant.new(name: "Coco le Cactus", origin_health: 1, remote_picture_url: "https://res.cloudinary.com/kimlinh/image/upload/v1559145855/cactus_pazkyu.jpg")
 user_plant1.user = nico
 user_plant1.plant = cactus
 user_plant1.save!
