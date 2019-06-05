@@ -3,13 +3,12 @@
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
            url('<%= cl_image_path @user_plant.picture if @user_plant.picture.present? %>')">
       <%= @user_plant.name %>
-      <%= link_to "Changer mon nom", edit_user_plant_path(@user_plant), class:"btn btn-primary" %>
     </div>
     <div class="card-category-infos">
       <h1><%= @user_plant.variety %></h1>
       <p><%= @user_plant.description %></p>
       <div class="card-category-activities">
-        <p>Arrosé le : <span> <%= Water.last.created_at.strftime("%d" " " "%B") %></span></p>
+        <p>Arrosée le : <span> <%= Water.last.created_at.strftime("%d" " " "%B") %></span></p>
         <p>Etat : <span> <%= @user_plant.origin_health %></span></p>
         <!-- <p>Prochain arrosage : <span> J-<%= Water.last.countdown %></span></p> -->
         <div class="bar-container" style="height: 200px; width: 200px">
@@ -37,6 +36,9 @@
 
   </div>
   </div>
+    <p class="button"><%= link_to "Modifier ma plante", edit_user_plant_path(@user_plant) %>
+    </p>
+
       <h1 class="button"><%= link_to "J'accède à mon jardin", user_plants_path %></h1>
     </div>
 </div>
