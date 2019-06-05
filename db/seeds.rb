@@ -63,7 +63,7 @@ user_plant5.save!
 
 user_plant6 = UserPlant.new(created_at: DateTime.now - 4.days ,name: "Duncan le Pilea", origin_health: 4, remote_picture_url: "https://mediasv6.truffaut.com/Articles/jpg/0592000/592581_002_1000.jpg")
 user_plant6.user = nico
-user_plant6.plant = Pilea
+user_plant6.plant = pilea
 user_plant6.save!
 
 puts 'Finiii'
