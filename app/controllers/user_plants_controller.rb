@@ -9,7 +9,7 @@ class UserPlantsController < ApplicationController
 
   def show
     @last_water = @user_plant.waters.last
-    # @last_water.update(created_at: DateTime.now - 15.days)
+     # @last_water.update(created_at: DateTime.now - 6.days)
     @level = ((1 - (@last_water.countdown.to_f / @user_plant.plant.days)) * 140).to_i
   end
 

@@ -7,13 +7,4 @@ class WatersController < ApplicationController
     flash[:notice] = "#{@user_plant.name} est arrosé(e)"
     redirect_to @user_plant
   end
-
-  def update
-    #faire le calcul pour le nombre d'arrosage
-  end
-
-  def calculate_days
-    # faire un if avec le arrosage.date et le plant.days
-    # send message
-  end
 end
