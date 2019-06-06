@@ -3,9 +3,9 @@
     <h1>Hey <%= current_user.first_name %>, crée une plante !</h1>
     <%= simple_form_for @user_plant do |f| %>
         <%= f.error_notification %>
-        <%= f.input :name, label: "Nom de la plante"%>
-        <%= f.association :plant %>
-        <%= f.input :origin_health, label: "Etat de la plante", :collection => %w[critique terne impeccable magnifique splendide] %>
+        <%= f.input :name, label: "Donne-moi un nom !", placeholder: "Coco"%>
+        <%= f.association :plant, label: "A quelle famille j'appartiens ?", selected: "cactus" %>
+        <%= f.input :origin_health, label: "Mon état (ne triche pas !)", :collection => %w[critique terne impeccable magnifique splendide], selected: "magnifique" %>
         <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id }%>
         <%= f.input :picture, label: "Photo" %>
         <%= f.input :picture_cache, as: :hidden %>
