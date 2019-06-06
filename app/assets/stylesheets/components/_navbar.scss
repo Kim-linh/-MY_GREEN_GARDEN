@@ -1,10 +1,13 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  display: flex;
 }
 
 .nav-item {
-  padding-left: 160px;
+  flex-grow: 1;
+  text-align: right;
+  padding-right: 5px;
 }
 
 .navbar-lewagon .navbar-collapse {
