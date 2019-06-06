@@ -1,0 +1,4 @@
+meta_product_name: "MyGreenGarden"
+meta_title: "MyGreenGarden - Keep Your Plant Alive !"
+meta_description: "MyGreenGarden est une application qui t'aide à prendre soin de tes plantes."
+meta_image: "cover.jpg" # should exist in `app/assets/images/`
