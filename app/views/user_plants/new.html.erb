@@ -7,7 +7,7 @@
       <%= f.association :plant, label: "A quelle famille j'appartiens ?", selected: "cactus" %>
       <%= f.input :origin_health, label: "Mon état (ne triche pas !)", :collection => %w[critique terne impeccable magnifique splendide], selected: "magnifique" %>
       <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id }%>
-      <%= f.input :picture, label: "Photo" %>
+      <%= f.input :picture, label: "Photo :" %>
       <%= f.input :picture_cache, as: :hidden %>
       <%= f.submit "Créer ma plante", class: "button" %>
     <% end %>
