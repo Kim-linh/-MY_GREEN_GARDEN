@@ -17,6 +17,8 @@ gem 'uglifier'
 gem 'webpacker', '4.0.2'
 gem 'devise'
 
+gem 'rails-i18n', '~> 5.1'
+
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem 'geocoder'
