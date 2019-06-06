@@ -12,7 +12,7 @@
           <div class="card-category-activities">
             <div>
               <h2>Arrosée le :</h2>
-               <p><span><%= Water.last.created_at.strftime("%d" " " "%B") %></span></p>
+               <p><span><%= l(Water.last.created_at, format: "%d %B") %></span></p>
                <br>
               <h2>État :</h2>
                 <p><span><%= @user_plant.origin_health %></span></p>
