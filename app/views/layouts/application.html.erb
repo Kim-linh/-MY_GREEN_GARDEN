@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" type="image/x-icon" href="/app/assets/images/favicon.ico" />
-    <meta property="og:title" content="MyGreenGarden - Keep Your Plant Alive !">
-    <meta property="og:image" content="facebook-card.jpg">
-    <meta property="og:description" content="MyGreenGarden est l'application qui t'aide à prendre soin de tes plantes.">
-    <meta property="og:type" content="website"/>
-    <meta property="og:site_name" content="MyGreenGarden"/>
-    <meta property="og:url" content="https://www.facebook.com/My-Green-Garden-573970760100391/"/>
-    <meta name="description" content="MyGreenGarden t'aide à prendre soin de tes plantes.">
-    <title>MyGreenGarden - L'application qui t'aide à prendre soin de tes plantes.</title>
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
+
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
