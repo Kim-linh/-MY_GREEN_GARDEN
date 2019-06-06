@@ -3,6 +3,10 @@
   position: relative;
 }
 
+.back-position {
+  z-index: -1;
+}
+
 .branch {
   animation:sway 5s infinite linear alternate;
   border-bottom:none;
