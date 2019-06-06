@@ -7,4 +7,13 @@ class Plant < ApplicationRecord
   def to_s
     variety
   end
+
+  def difficulty
+    case days
+    when 0..5 then 'difficile'
+    when 5..10 then 'moyen'
+    else
+      'facile'
+    end
+  end
 end

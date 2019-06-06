@@ -9,7 +9,7 @@ class UserPlantsController < ApplicationController
 
   def show
     @last_water = @user_plant.waters.last
-    # @last_water.update(created_at: DateTime.now - 15.days)
+     # @last_water.update(created_at: DateTime.now - 6.days)
     @level = ((1 - (@last_water.countdown.to_f / @user_plant.plant.days)) * 140).to_i
   end
 
@@ -44,6 +44,11 @@ class UserPlantsController < ApplicationController
   end
 
   private
+
+  def calculate_maintenance
+    # si le nombre de jours d'arrosage est superieur ou egale à 14 alors entretien facile
+    # si le nombre de jour est super
+  end
 
   # def user_plant_age(user_plant)
   #   @age = (DateTime.now.to_i - user_plant.created_at.to_i) / (60 * 60 * 24)
