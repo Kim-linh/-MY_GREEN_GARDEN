@@ -2,14 +2,14 @@
   <div class="form-signup">
     <h1>Hey <%= current_user.first_name %>, crée une plante !</h1>
     <%= simple_form_for @user_plant do |f| %>
-        <%= f.error_notification %>
-        <%= f.input :name, label: "Donne-moi un nom !", placeholder: "Coco"%>
-        <%= f.association :plant, label: "A quelle famille j'appartiens ?", selected: "cactus" %>
-        <%= f.input :origin_health, label: "Mon état (ne triche pas !)", :collection => %w[critique terne impeccable magnifique splendide], selected: "magnifique" %>
-        <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id }%>
-        <%= f.input :picture, label: "Photo" %>
-        <%= f.input :picture_cache, as: :hidden %>
-        <%= f.submit "Créer ma plante", class: "button" %>
+      <%= f.error_notification %>
+      <%= f.input :name, label: "Donne-moi un nom !", placeholder: "Coco"%>
+      <%= f.association :plant, label: "A quelle famille j'appartiens ?", selected: "cactus" %>
+      <%= f.input :origin_health, label: "Mon état (ne triche pas !)", :collection => %w[critique terne impeccable magnifique splendide], selected: "magnifique" %>
+      <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id }%>
+      <%= f.input :picture, label: "Photo" %>
+      <%= f.input :picture_cache, as: :hidden %>
+      <%= f.submit "Créer ma plante", class: "button" %>
     <% end %>
-    </div>
+  </div>
 </div>
