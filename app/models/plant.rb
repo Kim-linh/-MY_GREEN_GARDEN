@@ -10,10 +10,10 @@ class Plant < ApplicationRecord
 
   def difficulty
     case days
-    when 0..5 then 'difficile'
-    when 5..10 then 'moyen'
+    when 0..5 then 'très fréquent'
+    when 5..10 then 'fréquent'
     else
-      'facile'
+      'peu fréquent'
     end
   end
 end
